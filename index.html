@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+        #flex-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            font-family: "Myriad Pro Regular", sans-serif;
+            font-size: 128px;
+            /*background-color: rgb(236, 106, 94);*/
+            background-color: #FF6700;
+            color: white;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            if (new Date().getHours() >= 18) {
+                setTimeout(function () {
+                    window.close()
+                }, 1000)
+            } else {
+                time = new Date()
+                time.setHours(18);
+                time.setMinutes(0);
+                time.setSeconds(0);
+                time.setMilliseconds(0);
+                document.getElementById("flex-container").innerHTML = Math.round((time - new Date()) / 60000) + " minutes left :)"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="flex-container">
+        Stay Focused.
+    </div>
+
+</body>
+
+</html>
